@@ -19,7 +19,7 @@ Import either scenario into the [free Workbench browser demo](https://idle-econo
 
 ## Use in a workflow
 
-Use this repository as a local action, or reference a reviewed published commit or release. The example's `6aec5e307d05fa5049f7c09beb8e0e2a07a97bce` placeholder must be replaced with the actual reviewed 40-character commit SHA before use.
+The example below uses the reviewed immutable commit from the published v1.0.0 release. Check out your current scenario and freshly generated or exported report before running it.
 
 ```yaml
 name: Check exported economy report
