@@ -19,7 +19,7 @@ Import either scenario into the [free Workbench browser demo](https://idle-econo
 
 ## Use in a workflow
 
-Use this repository as a local action, or reference a reviewed published commit or release. The example's `FULL_COMMIT_SHA` placeholder must be replaced with the actual reviewed 40-character commit SHA before use.
+Use this repository as a local action, or reference a reviewed published commit or release. The example's `6aec5e307d05fa5049f7c09beb8e0e2a07a97bce` placeholder must be replaced with the actual reviewed 40-character commit SHA before use.
 
 ```yaml
 name: Check exported economy report
@@ -36,7 +36,7 @@ jobs:
       # Generate or export reports/candidate.json for this exact current scenario
       # before this step. A committed old report is not an automatic simulation.
       - name: Check supplied milestones
-        uses: Feros47/idle-economy-report-check@FULL_COMMIT_SHA
+        uses: Feros47/idle-economy-report-check@6aec5e307d05fa5049f7c09beb8e0e2a07a97bce
         with:
           report: reports/candidate.json
           scenario: economy/candidate.json
