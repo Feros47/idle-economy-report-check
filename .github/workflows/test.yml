@@ -1,0 +1,27 @@
+name: Test report checker
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # actions/checkout v6
+        with:
+          persist-credentials: false
+      - run: node --test tests/check.test.cjs
+      - name: Exercise the local Action on a passing report
+        id: pacing
+        uses: ./
+        with:
+          report: examples/baseline-report.json
+          scenario: examples/baseline.json
+          budgets: '1000:300'
+      - name: Check Action outputs
+        env:
+          PASSED: ${{ steps.pacing.outputs.passed }}
+          COUNT: ${{ steps.pacing.outputs.checked-count }}
+        run: node -e "if (process.env.PASSED !== 'true' || process.env.COUNT !== '1') process.exit(1)"

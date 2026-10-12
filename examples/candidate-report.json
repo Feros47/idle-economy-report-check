@@ -1,0 +1,75 @@
+{
+  "scenario": {
+    "version": 1,
+    "name": "Cozy Garden · gentle onboarding",
+    "startingBalance": 20,
+    "clickIncomePerSecond": 0.5,
+    "horizonSeconds": 1800,
+    "strategy": "best-payback",
+    "maxPurchases": 1000,
+    "generators": [
+      {
+        "id": "seed-bed",
+        "name": "Seed bed",
+        "baseCost": 20,
+        "costGrowth": 1.2,
+        "incomePerSecond": 0.5,
+        "owned": 0,
+        "maxOwned": 150,
+        "enabled": true
+      },
+      {
+        "id": "orchard",
+        "name": "Orchard",
+        "baseCost": 160,
+        "costGrowth": 1.18,
+        "incomePerSecond": 3,
+        "owned": 0,
+        "maxOwned": 100,
+        "enabled": true
+      },
+      {
+        "id": "greenhouse",
+        "name": "Greenhouse",
+        "baseCost": 1400,
+        "costGrowth": 1.2,
+        "incomePerSecond": 25,
+        "owned": 0,
+        "maxOwned": 60,
+        "enabled": true
+      }
+    ],
+    "milestones": [
+      100,
+      1000,
+      10000
+    ]
+  },
+  "summary": {
+    "horizonSeconds": 1800,
+    "lifetimeEarned": 603729.4053121014,
+    "totalSpent": 531014.7684217104,
+    "finalBalance": 72734.63689039103,
+    "finalIncomePerSecond": 666,
+    "purchases": 74,
+    "blockedReason": "horizon-reached",
+    "purchasingTruncated": false
+  },
+  "milestones": [
+    {
+      "amount": 100,
+      "reached": true,
+      "timeSeconds": 74.66666666666666
+    },
+    {
+      "amount": 1000,
+      "reached": true,
+      "timeSeconds": 312
+    },
+    {
+      "amount": 10000,
+      "reached": true,
+      "timeSeconds": 580.4426381375988
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+name: 'Idle Economy Report Check'
+description: 'Check exported idle-economy milestone reports against explicit deadlines and the current scenario.'
+author: 'Feros47'
+branding:
+  icon: 'check-circle'
+  color: 'green'
+inputs:
+  report:
+    description: 'Workspace-relative path to a Workbench full JSON report; comparison reports check the candidate.'
+    required: true
+  scenario:
+    description: 'Workspace-relative path to the current version-1 scenario, with explicit exported fields.'
+    required: true
+  budgets:
+    description: 'One or more amount:maximum-seconds checks, separated by commas or newlines.'
+    required: true
+outputs:
+  passed:
+    description: 'true only when every explicit deadline passes; false for missed deadlines or invalid inputs.'
+  checked-count:
+    description: 'Number of explicit milestone deadlines checked; 0 for invalid inputs.'
+runs:
+  using: 'node24'
+  main: 'check.cjs'
